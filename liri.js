@@ -4,9 +4,7 @@ var fs = require("fs");
 var keys = require("./keys.js");
 var moment = require("moment");
 var Spotify = require("node-spotify-api");
-
 var spotify = new Spotify(keys.spotify);
-
 var input1 = process.argv[2];
 var input2 = process.argv.slice(3).join(" ");
 var userInput = input1 + "," + input2;
@@ -14,46 +12,48 @@ var command;
 var content;
 var concertQueryUrl;
 
-fs.writeFile("./random.txt", userInput, err => {
-  if (err) {
-    console.error(err);
-    return;
-  }
-});
+if (input1 != "do-what-it-says") {
+  fs.writeFile("./random.txt", userInput, err => {
+    if (err) {
+      console.error(err);
+      return;
+    }
+  });
+}
 
 fs.readFile("./random.txt", "utf-8", function(err, data) {
   if (err) {
     return console.log(err);
   }
-  //   console.log(data);
+
   dataArr = data.split(",");
   command = dataArr[0];
   content = dataArr[1];
-  //   console.log(command);
-  //   console.log(content);
-  concertQueryUrl =
-    "https://rest.bandsintown.com/artists/" +
-    content +
-    "/events?app_id=codingbootcamp";
 
   switch (command) {
     case "concert-this":
+      concertQueryUrl =
+        "https://rest.bandsintown.com/artists/" +
+        content +
+        "/events?app_id=codingbootcamp";
       axios
         .get(concertQueryUrl)
         .then(function(response) {
-          //   console.log(response);
-          //   console.log(response.data[0].venue);
-          //   console.log(response.data[0].venue.name);
-          let concertResponse =
-            "Venue Name: " +
-            response.data[0].venue.name +
-            "\nCountry: " +
-            response.data[0].venue.country +
-            "\nCity: " +
-            response.data[0].venue.city +
-            "\nEvent Time: " +
-            moment(response.data[0].datetime).format("DD/MM/YYYY");
-          console.log(concertResponse);
+          for (let i = 0; i < response.data.length; i++) {
+            let concertResponse =
+              "Venue Name: " +
+              response.data[i].venue.name +
+              "\nCountry: " +
+              response.data[i].venue.country +
+              "\nCity: " +
+              response.data[i].venue.city +
+              "\nEvent Time: " +
+              moment(response.data[i].datetime).format("DD/MM/YYYY") +
+              "\n";
+            console.log(
+              "Upcoming events for " + content.toUpperCase() + concertResponse
+            );
+          }
         })
         .catch(function(error) {
           if (error.response) {
@@ -69,6 +69,7 @@ fs.readFile("./random.txt", "utf-8", function(err, data) {
           }
           console.log(error.config);
         });
+      break;
 
     case "spotify-this-song":
       if (content == "") {
@@ -78,7 +79,6 @@ fs.readFile("./random.txt", "utf-8", function(err, data) {
             query: "ace of base",
             limit: 1
           })
-
           .then(function(response) {
             console.log(
               "Artist's Name: " +
@@ -120,5 +120,92 @@ fs.readFile("./random.txt", "utf-8", function(err, data) {
             console.log(err);
           });
       }
+      break;
+
+    case "movie-this":
+      if (content != "") {
+        axios
+          .get("http://www.omdbapi.com/?t=" + content + "&apikey=trilogy")
+          .then(function(response) {
+            let eachSearch = response.data;
+            //   console.log(eachSearch.Ratings);
+            console.log(
+              "Movie Tile: " +
+                eachSearch.Title +
+                "\nYear: " +
+                eachSearch.Year +
+                "\nIMDB Rating: " +
+                eachSearch.imdbRating +
+                "\nRotten Tomatos Rating: " +
+                eachSearch.Ratings[1].Value +
+                "\nCountry: " +
+                eachSearch.Country +
+                "\nLanguage: " +
+                eachSearch.Language +
+                "\nPlot: " +
+                eachSearch.Plot +
+                "\nActors: " +
+                eachSearch.Actors +
+                "\n"
+            );
+          })
+          .catch(function(error) {
+            if (error.response) {
+              console.log("---------------Data---------------");
+              console.log(error.response.data);
+              console.log("---------------Status---------------");
+              console.log(error.response.status);
+              console.log("---------------Status---------------");
+              console.log(error.response.headers);
+            } else if (error.request) {
+              console.log(error.request);
+            } else {
+              console.log("Error", error.message);
+            }
+            console.log(error.config);
+          });
+      } else {
+        axios
+          .get("http://www.omdbapi.com/?t=Mr.Nobody&apikey=trilogy")
+          .then(function(response) {
+            let eachSearch = response.data;
+
+            console.log(
+              "Movie Tile: " +
+                eachSearch.Title +
+                "\nYear: " +
+                eachSearch.Year +
+                "\nIMDB Rating: " +
+                eachSearch.imdbRating +
+                "\nRotten Tomatos Rating: " +
+                eachSearch.Ratings[1].Value +
+                "\nCountry: " +
+                eachSearch.Country +
+                "\nLanguage: " +
+                eachSearch.Language +
+                "\nPlot: " +
+                eachSearch.Plot +
+                "\nActors: " +
+                eachSearch.Actors +
+                "\n"
+            );
+          })
+          .catch(function(error) {
+            if (error.response) {
+              console.log("---------------Data---------------");
+              console.log(error.response.data);
+              console.log("---------------Status---------------");
+              console.log(error.response.status);
+              console.log("---------------Status---------------");
+              console.log(error.response.headers);
+            } else if (error.request) {
+              console.log(error.request);
+            } else {
+              console.log("Error", error.message);
+            }
+            console.log(error.config);
+          });
+      }
+      break;
   }
 });
