@@ -1,9 +1,10 @@
 require("dotenv").config();
+
 var axios = require("axios");
 var fs = require("fs");
 var keys = require("./keys.js");
 var moment = require("moment");
-// var spotify = new Spotify(keys.spotify);
+var spotify = new Spotify(keys.spotify);
 var input1 = process.argv[2];
 var input2 = process.argv.slice(3).join(" ");
 var userInput = input1 + "," + input2;
