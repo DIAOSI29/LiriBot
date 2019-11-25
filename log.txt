@@ -1,0 +1,84 @@
+NEW COMMAND: concert-this,taylor swift
+
+Upcoming events for TAYLOR SWIFT:
+
+Venue Name: Capital's Jingle Bell Ball
+Country: United Kingdom
+City: London
+Event Time: 08/12/2019
+
+Venue Name: Z100's Jingle Ball Presented by Capital One
+Country: United States
+City: New York
+Event Time: 13/12/2019
+
+Venue Name: Oslo Sommertid
+Country: Norway
+City: Oslo
+Event Time: 26/06/2020
+
+Venue Name: Roskilde Festival
+Country: Denmark
+City: Roskilde
+Event Time: 01/07/2020
+
+Venue Name: Open’er Festival
+Country: Poland
+City: Powiat Pucki
+Event Time: 03/07/2020
+
+Venue Name: Festival de Nîmes
+Country: France
+City: Nimes
+Event Time: 05/07/2020
+
+Venue Name: NOS Alive
+Country: Portugal
+City: Algés
+Event Time: 09/07/2020
+
+Venue Name: Allianz Parque
+Country: Brazil
+City: Sao Paulo
+Event Time: 18/07/2020
+
+Venue Name: Allianz Parque
+Country: Brazil
+City: Sao Paulo
+Event Time: 19/07/2020
+
+Venue Name: Lover Fest West
+Country: United States
+City: Los Angeles
+Event Time: 25/07/2020
+
+Venue Name: Lover Fest West
+Country: United States
+City: Los Angeles
+Event Time: 26/07/2020
+
+Venue Name: Lover Fest East
+Country: United States
+City: Foxborough
+Event Time: 31/07/2020
+
+Venue Name: Lover Fest East
+Country: United States
+City: Foxborough
+Event Time: 01/08/2020
+
+Venue Name: Waldbühne Berlin
+Country: Germany
+City: Berlin
+Event Time: 24/06/2020
+
+Venue Name: Capital One JamFest
+Country: United States
+City: Atlanta
+Event Time: 05/04/2020
+
+Venue Name: Werchter Boutique
+Country: Belgium
+City: Rotselaar
+Event Time: 20/06/2020
+

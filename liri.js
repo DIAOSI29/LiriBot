@@ -30,8 +30,21 @@ fs.readFile("./random.txt", "utf-8", function(err, data) {
   command = dataArr[0];
   content = dataArr[1];
 
+  let eachLogInput = "NEW COMMAND: " + userInput + "\n" + "\n";
+  fs.appendFile("./log.txt", eachLogInput, err => {
+    if (err) throw err;
+  });
+
   switch (command) {
     case "concert-this":
+      console.log("Upcoming events for " + content.toUpperCase() + ":" + "\n");
+      fs.appendFile(
+        "./log.txt",
+        "Upcoming events for " + content.toUpperCase() + ":" + "\n" + "\n",
+        err => {
+          if (err) throw err;
+        }
+      );
       concertQueryUrl =
         "https://rest.bandsintown.com/artists/" +
         content +
@@ -50,9 +63,10 @@ fs.readFile("./random.txt", "utf-8", function(err, data) {
               "\nEvent Time: " +
               moment(response.data[i].datetime).format("DD/MM/YYYY") +
               "\n";
-            console.log(
-              "Upcoming events for " + content.toUpperCase() + concertResponse
-            );
+            console.log(concertResponse);
+            fs.appendFile("./log.txt", concertResponse + "\n", err => {
+              if (err) throw err;
+            });
           }
         })
         .catch(function(error) {
@@ -91,11 +105,37 @@ fs.readFile("./random.txt", "utf-8", function(err, data) {
                 response.tracks.items[0].album.name +
                 "\n"
             );
+            fs.appendFile(
+              "./log.txt",
+              "Default Result: " +
+                "\n" +
+                "\nArtist's Name: " +
+                response.tracks.items[0].artists[0].name +
+                "\nSong's Name: " +
+                response.tracks.items[0].name +
+                "\nPreview Link: " +
+                response.tracks.items[0].external_urls.spotify +
+                "\nAlbum: " +
+                response.tracks.items[0].album.name +
+                "\n" +
+                "\n",
+              err => {
+                if (err) throw err;
+              }
+            );
           })
           .catch(function(err) {
             console.log(err);
           });
       } else {
+        console.log("\nSpotify data for " + content.toUpperCase() + ":" + "\n");
+        fs.appendFile(
+          "./log.txt",
+          "Spotify data for " + content.toUpperCase() + ":" + "\n" + "\n",
+          err => {
+            if (err) throw err;
+          }
+        );
         spotify
           .search({ type: "track", query: content, limit: 5 })
           .then(function(response) {
@@ -111,9 +151,13 @@ fs.readFile("./random.txt", "utf-8", function(err, data) {
                 eachSearch.external_urls.spotify +
                 "\nAlbum: " +
                 eachSearch.album.name +
+                "\n" +
                 "\n";
 
               console.log(spotifyDisplayResult);
+              fs.appendFile("./log.txt", spotifyDisplayResult, err => {
+                if (err) throw err;
+              });
             }
           })
           .catch(function(err) {
@@ -124,30 +168,41 @@ fs.readFile("./random.txt", "utf-8", function(err, data) {
 
     case "movie-this":
       if (content != "") {
+        console.log("\nMovie data for " + content.toUpperCase() + ":" + "\n");
+        fs.appendFile(
+          "./log.txt",
+          "Movie data for " + content.toUpperCase() + ":" + "\n" + "\n",
+          err => {
+            if (err) throw err;
+          }
+        );
         axios
           .get("http://www.omdbapi.com/?t=" + content + "&apikey=trilogy")
           .then(function(response) {
             let eachSearch = response.data;
-            //   console.log(eachSearch.Ratings);
-            console.log(
+            let movieDisplayResult =
               "Movie Tile: " +
-                eachSearch.Title +
-                "\nYear: " +
-                eachSearch.Year +
-                "\nIMDB Rating: " +
-                eachSearch.imdbRating +
-                "\nRotten Tomatos Rating: " +
-                eachSearch.Ratings[1].Value +
-                "\nCountry: " +
-                eachSearch.Country +
-                "\nLanguage: " +
-                eachSearch.Language +
-                "\nPlot: " +
-                eachSearch.Plot +
-                "\nActors: " +
-                eachSearch.Actors +
-                "\n"
-            );
+              eachSearch.Title +
+              "\nYear: " +
+              eachSearch.Year +
+              "\nIMDB Rating: " +
+              eachSearch.imdbRating +
+              "\nRotten Tomatos Rating: " +
+              eachSearch.Ratings[1].Value +
+              "\nCountry: " +
+              eachSearch.Country +
+              "\nLanguage: " +
+              eachSearch.Language +
+              "\nPlot: " +
+              eachSearch.Plot +
+              "\nActors: " +
+              eachSearch.Actors +
+              "\n";
+            //   console.log(eachSearch.Ratings);
+            console.log(movieDisplayResult);
+            fs.appendFile("./log.txt", movieDisplayResult + "\n", err => {
+              if (err) throw err;
+            });
           })
           .catch(function(error) {
             if (error.response) {
@@ -169,26 +224,31 @@ fs.readFile("./random.txt", "utf-8", function(err, data) {
           .get("http://www.omdbapi.com/?t=Mr.Nobody&apikey=trilogy")
           .then(function(response) {
             let eachSearch = response.data;
+            let defaultMovieResult =
+              "Default Result: " +
+              "\n" +
+              "\nMovie Tile: " +
+              eachSearch.Title +
+              "\nYear: " +
+              eachSearch.Year +
+              "\nIMDB Rating: " +
+              eachSearch.imdbRating +
+              "\nRotten Tomatos Rating: " +
+              eachSearch.Ratings[1].Value +
+              "\nCountry: " +
+              eachSearch.Country +
+              "\nLanguage: " +
+              eachSearch.Language +
+              "\nPlot: " +
+              eachSearch.Plot +
+              "\nActors: " +
+              eachSearch.Actors +
+              "\n";
 
-            console.log(
-              "Movie Tile: " +
-                eachSearch.Title +
-                "\nYear: " +
-                eachSearch.Year +
-                "\nIMDB Rating: " +
-                eachSearch.imdbRating +
-                "\nRotten Tomatos Rating: " +
-                eachSearch.Ratings[1].Value +
-                "\nCountry: " +
-                eachSearch.Country +
-                "\nLanguage: " +
-                eachSearch.Language +
-                "\nPlot: " +
-                eachSearch.Plot +
-                "\nActors: " +
-                eachSearch.Actors +
-                "\n"
-            );
+            console.log(defaultMovieResult);
+            fs.appendFile("./log.txt", defaultMovieResult + "\n", err => {
+              if (err) throw err;
+            });
           })
           .catch(function(error) {
             if (error.response) {
