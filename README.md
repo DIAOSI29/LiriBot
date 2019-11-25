@@ -65,15 +65,26 @@ CONTENT input will be either a song, a movie, a singer or left blank depends on 
 - After user typed in codes to run LiriBot, LiriBot will
 
 1.  Write codes into the `random.txt` file
-2.  Read what is in random.txt file and then translate it into constructed data request. In another word, random.txt file acts as the controller of the app
-3.  Display data, with the use of `console.log`, in terminal in the constructed format so that user can clearly see all key relevant information
-4.  Store each user input as well as retrieved data in the `log.txt` file for user's future reference purpose (previous search result will NOT be overwritten)
-5.  Every time user runs LiriBot with new COMMAND and CONTENT, data in the random.txt file update accordingly
-6.  The same operation cycle will be performed as what is demonstrated above
-
-- data about a particular artist's upcoming events
 
 ```console
-$ ./configure
-$ make -j4
+if (input1 != "do-what-it-says") {
+  fs.writeFile("./random.txt", userInput, err => {
+    if (err) {
+      console.error(err);
+      return;
+    }
+  });
+}
 ```
+
+![Write File - Animated gif demo](./gifs/writeFile.gif)
+
+2.  Read what is in random.txt file and then translate it into constructed data request. In another word, random.txt file acts as the controller of the app
+
+3.  Display data, with the use of `console.log`, in terminal in the constructed format so that user can clearly see all key relevant information
+
+4.  Store each user input as well as retrieved data in the `log.txt` file for user's future reference purpose (previous search result will NOT be overwritten)
+
+5.  Every time user runs LiriBot with new COMMAND and CONTENT, data in the random.txt file update accordingly
+
+6.  The same operation cycle will be performed as what is demonstrated above

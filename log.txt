@@ -1,84 +1,132 @@
-NEW COMMAND: concert-this,taylor swift
+NEW COMMAND: movie-this,
 
-Upcoming events for TAYLOR SWIFT:
+Default Result: 
 
-Venue Name: Capital's Jingle Bell Ball
-Country: United Kingdom
-City: London
-Event Time: 08/12/2019
+Movie Tile: Mr. Nobody
+Year: 2009
+IMDB Rating: 7.8
+Rotten Tomatos Rating: 67%
+Country: Belgium, Germany, Canada, France, USA, UK
+Language: English, Mohawk
+Plot: A boy stands on a station platform as a train is about to leave. Should he go with his mother or stay with his father? Infinite possibilities arise from this decision. As long as he doesn't choose, anything is possible.
+Actors: Jared Leto, Sarah Polley, Diane Kruger, Linh Dan Pham
 
-Venue Name: Z100's Jingle Ball Presented by Capital One
-Country: United States
-City: New York
-Event Time: 13/12/2019
+NEW COMMAND: movie-this,inception
 
-Venue Name: Oslo Sommertid
-Country: Norway
-City: Oslo
-Event Time: 26/06/2020
+Movie data for INCEPTION:
 
-Venue Name: Roskilde Festival
-Country: Denmark
-City: Roskilde
-Event Time: 01/07/2020
+Movie Tile: Inception
+Year: 2010
+IMDB Rating: 8.8
+Rotten Tomatos Rating: 87%
+Country: USA, UK
+Language: English, Japanese, French
+Plot: A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.
+Actors: Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page, Tom Hardy
 
-Venue Name: Open’er Festival
-Country: Poland
-City: Powiat Pucki
-Event Time: 03/07/2020
+NEW COMMAND: movie-this,inception
 
-Venue Name: Festival de Nîmes
-Country: France
-City: Nimes
-Event Time: 05/07/2020
+Movie data for INCEPTION:
 
-Venue Name: NOS Alive
-Country: Portugal
-City: Algés
-Event Time: 09/07/2020
+Movie Tile: Inception
+Year: 2010
+IMDB Rating: 8.8
+Rotten Tomatos Rating: 87%
+Country: USA, UK
+Language: English, Japanese, French
+Plot: A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.
+Actors: Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page, Tom Hardy
 
-Venue Name: Allianz Parque
-Country: Brazil
-City: Sao Paulo
-Event Time: 18/07/2020
+NEW COMMAND: movie-this,titanic
 
-Venue Name: Allianz Parque
-Country: Brazil
-City: Sao Paulo
-Event Time: 19/07/2020
+Movie data for TITANIC:
 
-Venue Name: Lover Fest West
-Country: United States
-City: Los Angeles
-Event Time: 25/07/2020
+Movie Tile: Titanic
+Year: 1997
+IMDB Rating: 7.8
+Rotten Tomatos Rating: 89%
+Country: USA
+Language: English, Swedish, Italian
+Plot: A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic.
+Actors: Leonardo DiCaprio, Kate Winslet, Billy Zane, Kathy Bates
 
-Venue Name: Lover Fest West
-Country: United States
-City: Los Angeles
-Event Time: 26/07/2020
+NEW COMMAND: spotify-this-song,hey jude
 
-Venue Name: Lover Fest East
-Country: United States
-City: Foxborough
-Event Time: 31/07/2020
+Spotify data for HEY JUDE:
 
-Venue Name: Lover Fest East
-Country: United States
-City: Foxborough
-Event Time: 01/08/2020
+Artist's Name: The Beatles
+Song's Name: Hey Jude - Remastered 2015
+Preview Link: https://open.spotify.com/track/0aym2LBJBk9DAYuHHutrIl
+Album: 1 (Remastered)
 
-Venue Name: Waldbühne Berlin
-Country: Germany
-City: Berlin
-Event Time: 24/06/2020
+Artist's Name: The Beatles
+Song's Name: Hey Jude - Remastered 2009
+Preview Link: https://open.spotify.com/track/3m7V717IKZqZLW5qUIOxdD
+Album: The Beatles 1967 - 1970 (Remastered)
 
-Venue Name: Capital One JamFest
-Country: United States
-City: Atlanta
-Event Time: 05/04/2020
+Artist's Name: The Beatles
+Song's Name: Hey Jude
+Preview Link: https://open.spotify.com/track/1eT2CjXwFXNx6oY5ydvzKU
+Album: Love
 
-Venue Name: Werchter Boutique
-Country: Belgium
-City: Rotselaar
-Event Time: 20/06/2020
+Artist's Name: Stephen Bennett
+Song's Name: Hey Jude
+Preview Link: https://open.spotify.com/track/220cgqZrOmpWb4QGLrwmTR
+Album: Beatles Acoustic Guitar Solos
+
+Artist's Name: Wilson Pickett
+Song's Name: Hey Jude
+Preview Link: https://open.spotify.com/track/1MMp1H2Kib2BCDtdL5nL63
+Album: Hey Jude
+
+NEW COMMAND: spotify-this-song,
+
+Default Result: 
+
+Artist's Name: Ace of Base
+Song's Name: The Sign
+Preview Link: https://open.spotify.com/track/0hrBpAOgrt8RXigk83LLNE
+Album: The Sign (US Album) [Remastered]
+
+NEW COMMAND: do-what-it-says,
+
+Movie data for INCEPTION:
+
+Movie Tile: Inception
+Year: 2010
+IMDB Rating: 8.8
+Rotten Tomatos Rating: 87%
+Country: USA, UK
+Language: English, Japanese, French
+Plot: A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.
+Actors: Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page, Tom Hardy
+
+NEW COMMAND: do-what-it-says,
+
+Spotify data for HERO:
+
+Artist's Name: Skillet
+Song's Name: Hero
+Preview Link: https://open.spotify.com/track/4CbKVDZkYKdv69I4bCaKUq
+Album: Awake
+
+Artist's Name: Foreigner
+Song's Name: Juke Box Hero
+Preview Link: https://open.spotify.com/track/00qOE7OjRl0BpYiCiweZB2
+Album: 4 (Expanded)
+
+Artist's Name: Maren Morris
+Song's Name: I Could Use a Love Song
+Preview Link: https://open.spotify.com/track/09iyGiljLWRYXdRazFkdtJ
+Album: HERO (Deluxe Edition)
+
+Artist's Name: Foo Fighters
+Song's Name: My Hero
+Preview Link: https://open.spotify.com/track/4dVbhS6OiYvFikshyaQaCN
+Album: The Colour And The Shape
+
+Artist's Name: Lil Durk
+Song's Name: Neighborhood Hero
+Preview Link: https://open.spotify.com/track/0kBqgeRsRdvvFqMpiCYRNg
+Album: Signed To The Streets 3
 
