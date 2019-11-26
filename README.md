@@ -42,7 +42,7 @@ The functionality of this app are built upon the use of npm packages which are:
    It is used to format date data retrieved from Bands In Town API
 
 4. fs
-   It is used to _write_ user input data in a `random.txt` file which will then be _read_ to make corresponding data request. It is also responsible for logging ( _append_ ) all user input and data output into a separate file `log.txt` for reference and archiving purpose.
+   It is used to **write** user input data in a `random.txt` file which will then be **read** to make corresponding data request. It is also responsible for logging ( **append** ) all user input and data output into a separate file `log.txt` for reference and archiving purpose.
 
 5. Node-Spotify-API
    It is installed as an npm package and used for requesting and displaying data about user typed song.
@@ -97,26 +97,26 @@ if (input1 != "do-what-it-says") {
 
 See how user input changes the content in random.txt file
 
-- COMMAND: concert-this CONTENT: user specified artist name
+- COMMAND: `concert-this` ------------ CONTENT: `user specified artist name`
 
 ![concert-this - Animated gif demo](./gifs/concert-this.gif)
 
-- COMMAND: spotify-this-song CONTENT: user specified song name
+- COMMAND: `spotify-this-song` ------- CONTENT: `user specified song name`
 
 ![spotify-this-song - Animated gif demo](./gifs/spotify-this-song.gif)
 
-- COMMAND: spotify-this-song CONTENT: empty
+- COMMAND: `spotify-this-song` ------- CONTENT: `empty`
 
 ![spotify-this-song-empty - Animated gif demo](./gifs/spotify-this-song-empty.gif)
 
-- COMMAND: movie-this CONTENT: user specified movie name
+- COMMAND: `movie-this` -------------- CONTENT: `user specified movie name`
 
 ![movie-this - Animated gif demo](./gifs/movie-this.gif)
 
-- COMMAND: movie-this CONTENT: empty
+- COMMAND: `movie-this` -------------- CONTENT: `empty`
 
 ![movie-this-empty - Animated gif demo](./gifs/movie-this-empty.gif)
 
-- Directly process what is in random.txt file with COMMAND: do-what-it-says in Node.js terminal
+- Directly process what is in random.txt file with -------- COMMAND: `do-what-it-says` in Node.js terminal
 
 ![do-what-it-says - Animated gif demo](./gifs/do-what-it-says.gif)
