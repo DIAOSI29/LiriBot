@@ -1,6 +1,6 @@
 # LiriBot
 
-## What this app is all about
+## What is LiriBot
 
 This is an application that uses Node.js as a means to retrieve and display information for the purpose of facilitating user in getting up-to-date and reliable data with respect to their chosen artists, songs and movies. With this tool a user can, by simply inputting a specific `COMMAND` as well as `CONTENT`, get structured data of one of the following:
 
@@ -86,13 +86,39 @@ if (input1 != "do-what-it-says") {
 
 2.  Read what is in random.txt file and then translate it into constructed data request. In another word, random.txt file acts as the controller of the app
 
+```
+fs.readFile("./random.txt", "utf-8", function(err, data) {
+  if (err) {
+    return console.log(err);
+  }
+
+  dataArr = data.split(",");
+  command = dataArr[0];
+  content = dataArr[1];
+
+  let eachLogInput = "NEW COMMAND: " + userInput + "\n" + "\n";
+  fs.appendFile("./log.txt", eachLogInput, err => {
+    if (err) throw err;
+  });
+
+  switch (command) {
+    case "concert-this": _corresponding code to be executed_; break;
+    case "spotify-this-song": _corresponding code to be executed_; break;
+    case "movie-this": _corresponding code to be executed_; break;
+    case "do-what-it-says": _corresponding code to be executed_; break;
+  }
+```
+
 3.  Display data, with the use of `console.log`, in terminal in the constructed format so that user can clearly see all key relevant information
+    ![screenshot for terminal data display](./gifs/terminal-data-display.png)
 
-4.  Store each user input as well as retrieved data in the `log.txt` file for user's future reference purpose (previous search result will NOT be overwritten)
+4)  Store each user input as well as retrieved data in the `log.txt` file for user's future reference purpose (previous search result will NOT be overwritten)
+    ![screenshot for log file display](./gifs/log-display.png)
 
-5.  Every time user runs LiriBot with new COMMAND and CONTENT, data in the random.txt file will update accordingly
+5)  Every time user runs LiriBot with new COMMAND and CONTENT, data in the random.txt file will update accordingly
+    ![screenshot for random txt file update](./gifs/overwrite-data-in-randomtxt.gif)
 
-6.  The same operation cycle will continue to loop like demonstrated above
+6)  The same operation cycle will continue to loop like demonstrated above
 
 **LiriBot operating secenario examples:**
 
@@ -133,3 +159,7 @@ Directly process what is in random.txt file with COMMAND: `do-what-it-says` in N
 ## Sole Developer
 
 **Tian Qin**
+
+```
+
+```
