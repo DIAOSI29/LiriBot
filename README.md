@@ -32,23 +32,23 @@ This is an application that uses Node.js as a means to retrieve and display info
 
 The functionality of this app are built upon the use of npm packages which are:
 
-1. DotEnv
+1. **DotEnv**
 
    It is used to store environment variables which will then be used in global process.env object in node. These are values that are meant to be specific to the computer that node is running on, and since we are gitignoring this file, they won't be pushed to github — keeping our API key information private.
 
-2. Axios
+2. **Axios**
 
    It is used to grab data from the OMDB API and the Bands In Town API
 
-3. Moment
+3. **Moment**
 
    It is used to format date data retrieved from Bands In Town API
 
-4. fs
+4. **fs**
 
    It is used to **write** user input data in a `random.txt` file which will then be **read** to make corresponding data request. It is also responsible for logging ( **append** ) all user input and data output into a separate file `log.txt` for reference and archiving purpose.
 
-5. Node-Spotify-API
+5. **Node-Spotify-API**
 
    It is installed as an npm package and used for requesting and displaying data about user typed song.
 
@@ -120,6 +120,20 @@ COMMAND: `movie-this` -------------- CONTENT: `empty`
 
 ![movie-this-empty - Animated gif demo](./gifs/movie-this-empty.gif)
 
-Directly process what is in random.txt file with -------- COMMAND: `do-what-it-says` in Node.js terminal
+Directly process what is in random.txt file with COMMAND: `do-what-it-says` in Node.js terminal
 
 ![do-what-it-says - Animated gif demo](./gifs/do-what-it-says.gif)
+
+## LiriBot Link
+
+Please refer to ![LiriBot Deployed Version](https://diaosi29.github.io/LiriBot/) to checkout how it works!
+
+## Technology Used In This Application
+
+- Node.js (`fs,dotenv,axios`)
+- Moment.js
+- API (spotify, bandsintown)
+
+## Sole Developer
+
+**Tian Qin**
