@@ -141,7 +141,6 @@ fs.readFile("./random.txt", "utf-8", function(err, data) {
           .then(function(response) {
             for (let i = 0; i < response.tracks.items.length; i++) {
               let eachSearch = response.tracks.items[i];
-              // console.log(response.tracks.items[i]);
               let spotifyDisplayResult =
                 "Artist's Name: " +
                 eachSearch.artists[0].name +

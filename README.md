@@ -2,35 +2,35 @@
 
 ## What this app is all about
 
-This is an application that uses Node.js as a means to retrieve and display information for the purpose of facilitating user in getting up-to-date and reliable data with respect to their chosen artists, songs and movies. With this tool a user can, by simply inputting a specific `COMMAND` as well as `CONTENT`, get structured data about:
+This is an application that uses Node.js as a means to retrieve and display information for the purpose of facilitating user in getting up-to-date and reliable data with respect to their chosen artists, songs and movies. With this tool a user can, by simply inputting a specific `COMMAND` as well as `CONTENT`, get structured data of one of the following:
 
-1. Upcoming concert events for an artist: (Listed data)
+- **Upcoming concert events for an artist: (Listed data)**
 
-- Name of the venue
-- Location of the venue
-- Date of the event (in `MM/DD/YYYY` format)
+* Name of the venue
+* Location of the venue
+* Date of the event (in `MM/DD/YYYY` format)
 
-2. Spotify data for a given song name:
+- **Spotify data for a given song:**
 
-- Artist's name
-- Song's name
-- A preview link of the song from Spotify
-- The album that the song is from
+* Artist's name
+* Song's name
+* A preview link of the song from Spotify
+* The album that the song is from
 
-3. OMDB data for a specific movie:
+- **OMDB data for a specific movie:**
 
-- Title of the movie.
-- Year the movie came out.
-- IMDB Rating of the movie.
-- Rotten Tomatoes Rating of the movie.
-- Country where the movie was produced.
-- Language of the movie.
-- Plot of the movie.
-- Actors in the movie.
+* Title of the movie.
+* Year the movie came out.
+* IMDB Rating of the movie.
+* Rotten Tomatoes Rating of the movie.
+* Country where the movie was produced.
+* Language of the movie.
+* Plot of the movie.
+* Actors in the movie.
 
 ## Overview
 
-The functionality of this app are built upon the use of npm packages which are:
+The functionality of this app are built upon the use of npm packages which includes:
 
 1. **DotEnv**
 
@@ -65,7 +65,7 @@ COMMAND will be one of the following:
 - `movie-this`
 - `do-what-it-says`
 
-CONTENT input will be either a song, a movie, a singer or left blank depends on the COMMAND made.
+CONTENT input will be either a song, a movie, a singer or left blank depends on the COMMAND.
 
 - After user typed in codes to run LiriBot, LiriBot will
 
@@ -90,9 +90,9 @@ if (input1 != "do-what-it-says") {
 
 4.  Store each user input as well as retrieved data in the `log.txt` file for user's future reference purpose (previous search result will NOT be overwritten)
 
-5.  Every time user runs LiriBot with new COMMAND and CONTENT, data in the random.txt file update accordingly
+5.  Every time user runs LiriBot with new COMMAND and CONTENT, data in the random.txt file will update accordingly
 
-6.  The same operation cycle will be performed as what is demonstrated above
+6.  The same operation cycle will continue to loop like demonstrated above
 
 **LiriBot operating secenario examples:**
 
@@ -123,10 +123,6 @@ COMMAND: `movie-this` -------------- CONTENT: `empty`
 Directly process what is in random.txt file with COMMAND: `do-what-it-says` in Node.js terminal
 
 ![do-what-it-says - Animated gif demo](./gifs/do-what-it-says.gif)
-
-## LiriBot Link
-
-Please refer to ![LiriBot Deployed Version](https://diaosi29.github.io/LiriBot/) to checkout how it works!
 
 ## Technology Used In This Application
 
