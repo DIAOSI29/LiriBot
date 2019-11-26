@@ -33,34 +33,37 @@ This is an application that uses Node.js as a means to retrieve and display info
 The functionality of this app are built upon the use of npm packages which are:
 
 1. DotEnv
+
    It is used to store environment variables which will then be used in global process.env object in node. These are values that are meant to be specific to the computer that node is running on, and since we are gitignoring this file, they won't be pushed to github — keeping our API key information private.
 
 2. Axios
+
    It is used to grab data from the OMDB API and the Bands In Town API
 
 3. Moment
+
    It is used to format date data retrieved from Bands In Town API
 
 4. fs
+
    It is used to **write** user input data in a `random.txt` file which will then be **read** to make corresponding data request. It is also responsible for logging ( **append** ) all user input and data output into a separate file `log.txt` for reference and archiving purpose.
 
 5. Node-Spotify-API
+
    It is installed as an npm package and used for requesting and displaying data about user typed song.
 
 ## User Guide
 
 User communicate with LiriBot via two methods: Node.js terminal command or directly change text inside ramdom.txt file. Here is a complete instruction of how to use this app:
 
-node liri.js COMMAND CONTENT
-
-- In Node.js Liribot root terminal user run the app by typing input in the format of "node liri.js _COMMAND_ _CONTENT_".
+**_ In Node.js Liribot root terminal user run the app by typing input in the format of "node liri.js *COMMAND* *CONTENT*". _**
 
 COMMAND will be one of the following:
 
-- concert-this
-- spotify-this-song
-- movie-this
-- do-what-it-says
+- `concert-this`
+- `spotify-this-song`
+- `movie-this`
+- `do-what-it-says`
 
 CONTENT input will be either a song, a movie, a singer or left blank depends on the COMMAND made.
 
@@ -97,26 +100,26 @@ if (input1 != "do-what-it-says") {
 
 See how user input changes the content in random.txt file
 
-- COMMAND: `concert-this` ------------ CONTENT: `user specified artist name`
+COMMAND: `concert-this` ------------ CONTENT: `user specified artist name`
 
 ![concert-this - Animated gif demo](./gifs/concert-this.gif)
 
-- COMMAND: `spotify-this-song` ------- CONTENT: `user specified song name`
+COMMAND: `spotify-this-song` ------- CONTENT: `user specified song name`
 
 ![spotify-this-song - Animated gif demo](./gifs/spotify-this-song.gif)
 
-- COMMAND: `spotify-this-song` ------- CONTENT: `empty`
+COMMAND: `spotify-this-song` ------- CONTENT: `empty`
 
 ![spotify-this-song-empty - Animated gif demo](./gifs/spotify-this-song-empty.gif)
 
-- COMMAND: `movie-this` -------------- CONTENT: `user specified movie name`
+COMMAND: `movie-this` -------------- CONTENT: `user specified movie name`
 
 ![movie-this - Animated gif demo](./gifs/movie-this.gif)
 
-- COMMAND: `movie-this` -------------- CONTENT: `empty`
+COMMAND: `movie-this` -------------- CONTENT: `empty`
 
 ![movie-this-empty - Animated gif demo](./gifs/movie-this-empty.gif)
 
-- Directly process what is in random.txt file with -------- COMMAND: `do-what-it-says` in Node.js terminal
+Directly process what is in random.txt file with -------- COMMAND: `do-what-it-says` in Node.js terminal
 
 ![do-what-it-says - Animated gif demo](./gifs/do-what-it-says.gif)
