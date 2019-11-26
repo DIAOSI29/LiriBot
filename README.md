@@ -49,7 +49,9 @@ The functionality of this app are built upon the use of npm packages which are:
 
 ## User Guide
 
-Here is a complete instruction of how to use this app:
+User communicate with LiriBot via two methods: Node.js terminal command or directly change text inside ramdom.txt file. Here is a complete instruction of how to use this app:
+
+node liri.js COMMAND CONTENT
 
 - In Node.js Liribot root terminal user run the app by typing input in the format of "node liri.js _COMMAND_ _CONTENT_".
 
@@ -88,3 +90,33 @@ if (input1 != "do-what-it-says") {
 5.  Every time user runs LiriBot with new COMMAND and CONTENT, data in the random.txt file update accordingly
 
 6.  The same operation cycle will be performed as what is demonstrated above
+
+**LiriBot operating secenario examples:**
+
+- Node.js terminal
+
+See how user input changes the content in random.txt file
+
+- COMMAND: concert-this CONTENT: user specified artist name
+
+![concert-this - Animated gif demo](./gifs/concert-this.gif)
+
+- COMMAND: spotify-this-song CONTENT: user specified song name
+
+![spotify-this-song - Animated gif demo](./gifs/spotify-this-song.gif)
+
+- COMMAND: spotify-this-song CONTENT: empty
+
+![spotify-this-song-empty - Animated gif demo](./gifs/spotify-this-song-empty.gif)
+
+- COMMAND: movie-this CONTENT: user specified movie name
+
+![movie-this - Animated gif demo](./gifs/movie-this.gif)
+
+- COMMAND: movie-this CONTENT: empty
+
+![movie-this-empty - Animated gif demo](./gifs/movie-this-empty.gif)
+
+- Directly process what is in random.txt file with COMMAND: do-what-it-says in Node.js terminal
+
+![do-what-it-says - Animated gif demo](./gifs/do-what-it-says.gif)
